@@ -38,7 +38,7 @@ def convert(message: telebot.types.Message):
     except ConvertionException as e:
         bot.reply_to(message, f'Ошибка пользователя.\n{e}. Повторите команду или нажмите сюда: /help')
     except Exception as e:
-        bot.reply_to(message, f'Не удалось обработать команду\n{e}. Повторите команду или нажмите сюда /help')
+        bot.reply_to(message, f'Не удалось обработать команду\n{e}. Повторите команду или нажмите сюда: /help')
     else:
         text = f'Стоимость {amount} {quote} в {base} составляет: {total_base}'
         bot.send_message(message.chat.id, text)
